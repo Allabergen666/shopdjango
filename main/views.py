@@ -42,6 +42,10 @@ def ProductViev(request):
 
 
 def CategoryViev(request):
-    return render(request, 'main/category.html')
+    products = Product.objects.all()
+    context = {
+        "products": products
+        }
+    return render(request, 'main/category.html', context=context)
 
    
